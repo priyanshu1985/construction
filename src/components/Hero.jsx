@@ -30,25 +30,25 @@ const Hero = ({ onScrollToServices }) => {
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
-          <div className="hero__badge">
+          <div className="hero__badge fade-in-up">
             <Zap size={12} className="icon-accent" />
             <span>
               Quality Assured Engineering
             </span>
           </div>
 
-          <h1 className="hero__title">
+          <h1 className="hero__title fade-in-up delay-100">
             Structural <br />
             <span className="text-accent">Excellence</span> <br />
             Reimagined.
           </h1>
 
-          <p className="hero__description">
+          <p className="hero__description fade-in-up delay-200">
             NovaBuild provides industrial-grade BIM coordination and structural
             master-planning for global projects.
           </p>
 
-          <div className="hero__actions">
+          <div className="hero__actions fade-in-up delay-300">
             <button
               onClick={onScrollToServices}
               className="btn btn--primary"

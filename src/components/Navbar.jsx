@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Building2, Menu, X } from "lucide-react";
 
-const Navbar = ({ onScrollToServices }) => {
+const Navbar = ({ onScrollToHome, onScrollToServices, onScrollToContact, onGetQuote }) => {
   // State for mobile menu visibility
   const [isOpen, setIsOpen] = useState(false);
   // State for detecting scroll to change navbar style
@@ -15,13 +15,9 @@ const Navbar = ({ onScrollToServices }) => {
   }, []);
 
   const navLinks = [
-    {
-      name: "Home",
-      action: () => window.scrollTo({ top: 0, behavior: "smooth" }),
-    },
+    { name: "Home", action: onScrollToHome },
     { name: "Services", action: onScrollToServices },
-    { name: "Portfolio", action: () => {} },
-    { name: "Contact", action: () => {} },
+    { name: "Contact", action: onScrollToContact },
   ];
 
   return (
@@ -33,7 +29,7 @@ const Navbar = ({ onScrollToServices }) => {
       <div className="navbar__container">
         <div
           className="navbar__brand"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={onScrollToHome}
         >
           <div className="navbar__logo-icon">
             <Building2 className="icon-primary" size={20} />
@@ -62,7 +58,7 @@ const Navbar = ({ onScrollToServices }) => {
               {link.name}
             </button>
           ))}
-          <button className="btn btn--primary navbar__cta">
+          <button onClick={onGetQuote} className="btn btn--primary navbar__cta">
             GET QUOTE
           </button>
         </div>
@@ -91,7 +87,7 @@ const Navbar = ({ onScrollToServices }) => {
               {link.name}
             </button>
           ))}
-          <button className="btn btn--primary navbar__mobile-cta">
+          <button onClick={onGetQuote} className="btn btn--primary navbar__mobile-cta">
             GET QUOTE
           </button>
         </div>
